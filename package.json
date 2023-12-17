@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest -u",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "netlify:deploy": "netlify deploy --dir=./build -p -m \"$(git log -1 --pretty=%B)\""
   },
   "dependencies": {
     "next": "14.0.4",
@@ -23,6 +24,7 @@
     "eslint-config-next": "14.0.4",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "netlify-cli": "^17.10.1",
     "postcss": "^8",
     "tailwindcss": "^3.3.0"
   }

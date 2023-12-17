@@ -23,6 +23,20 @@ jobs:
       - run:
           name: Run Jest tests
           command: yarn test
+  build:
+    docker:
+      - image: cimg/node:21.4.0
+    steps:
+      - checkout
+      - run:
+          name: Update yarn
+          command: yarn
+      - run:
+          name: Build project
+          command: yarn build
+      - run:
+          name: Netlify deploy
+          command: yarn netlify:deploy
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
@@ -34,4 +48,7 @@ workflows:
   main:
     jobs:
       - pre-build:
+          filters: *main-filter
+      - build:
+          requires: [pre-build]
           filters: *main-filter
