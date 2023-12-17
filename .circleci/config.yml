@@ -60,5 +60,4 @@ workflows:
   main:
     jobs:
       - build:
-          requires: [pre-build]
           filters: *main-filter
