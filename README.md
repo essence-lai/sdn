@@ -14,7 +14,7 @@ Questions? [`@essence-lai`](https://github.com/essence-lai)
 - [Table of Contents](#table-of-contents)
 - [Quick Links](#quick-links)
 - [Overview](#overview)
-- [Useful Resources](#useful-resourecs)
+- [Useful Resources](#useful-resources)
 
 # Quick links
 | Resource | Dev-pr | Prod |
