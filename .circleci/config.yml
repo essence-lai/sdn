@@ -28,9 +28,21 @@ jobs:
       - image: cimg/node:21.4.0
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
       - run:
           name: Update yarn
-          command: yarn
+          command: yarn install
+      - save_cache:
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+            - ./.next/cache
+      - run:
+          name: Run Jest tests
+          command: yarn test
       - run:
           name: Build project
           command: yarn build
@@ -47,8 +59,6 @@ workflows:
           filters: *pr-filter
   main:
     jobs:
-      - pre-build:
-          filters: *main-filter
       - build:
           requires: [pre-build]
           filters: *main-filter
