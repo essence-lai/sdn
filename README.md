@@ -6,6 +6,8 @@ This Next.js project efficiently verifies user entry eligibility through the pub
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/circleci/9coiYMfcHu1ERt5ztmp4sB/9yfCKidfgjt4isH3ALyDU3/tree/main.svg?style=svg&circle-token=5251542d9ca63de57af1e4ddd651fdbb57d70773)](https://dl.circleci.com/status-badge/redirect/circleci/9coiYMfcHu1ERt5ztmp4sB/9yfCKidfgjt4isH3ALyDU3/tree/main)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6be7c13a-2f70-44e2-b039-50fb4fc00c97/deploy-status)](https://app.netlify.com/sites/sdn-elai/deploys)
+
 Questions? [`@essence-lai`](https://github.com/essence-lai)
 <br/>
 
