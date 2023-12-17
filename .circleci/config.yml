@@ -18,11 +18,11 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Update yarn
-        command: yarn
+          name: Update yarn
+          command: yarn
       - run:
-        name: Run Jest tests
-        command: yarn test
+          name: Run Jest tests
+          command: yarn test
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
@@ -30,8 +30,8 @@ workflows:
   pr:
     jobs:
       - pre-build:
-        filters: *pr-filter
+          filters: *pr-filter
   main:
     jobs:
       - pre-build:
-        filters: *main-filter
+          filters: *main-filter
