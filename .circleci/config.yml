@@ -14,7 +14,7 @@ anchors:
 jobs:
   pre-build:
     docker:
-      - image: circleci/node:21.4.0
+      - image: cimg/node:21.4.0
     steps:
       - checkout
       - run:
