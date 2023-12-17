@@ -2,25 +2,36 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
+anchors:
+  main-filter: &main-filter
+    branches:
+      only: main
+  pr-filter: &pr-filter
+    branches:
+      only: /^feature\/.*/
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/configuration-reference/#executor-job
+  pre-build:
     docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/configuration-reference/#steps
+      - image: circleci/node:21.4.0
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+        name: Update yarn
+        command: yarn
+      - run:
+        name: Run Jest tests
+        command: yarn test
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  pr:
     jobs:
-      - say-hello
+      - pre-build:
+        filters: *pr-filter
+  main:
+    jobs:
+      - pre-build:
+        filters: *main-filter
