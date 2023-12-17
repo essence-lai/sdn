@@ -9,7 +9,7 @@
     "lint": "next lint",
     "test": "jest -u",
     "test:watch": "jest --watch",
-    "netlify:deploy": "netlify deploy -m \"$(git log -1 --pretty=%B)\""
+    "netlify:deploy": "netlify deploy -p -m \"$(git log -1 --pretty=%B)\""
   },
   "dependencies": {
     "next": "14.0.4",
