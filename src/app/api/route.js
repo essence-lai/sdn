@@ -7,12 +7,12 @@ const COUNTRY = 'country'
 const ADDRESSES = 'addresses'
 
 export async function POST(req, res) {
-    const user = await req.json()
+    const user = await req.json();
     const results = {
         name: false,
         dob: false,
         country: false
-    }
+    };
 
     res = await fetch('https://search.ofac-api.com/v3/', {
         method: "POST",
@@ -31,13 +31,13 @@ export async function POST(req, res) {
                     }
                 }]
             }),
-    })
+    });
 
     if (!res.ok) {
-        throw new Error(res.status)
+        throw new Error(res.status);
     }
 
-    const data = await res.json()
+    const data = await res.json();
     
     if (data.hasOwnProperty(MATCHES) && data[MATCHES].hasOwnProperty(user[NAME]) && data[MATCHES][user[NAME]].length > 0 ) {
         for (var match of data.matches[user[NAME]]){
@@ -50,8 +50,7 @@ export async function POST(req, res) {
             }
         }
     }
-    console.log(results)
-    return new Response(JSON.stringify(results))
+    return new Response(JSON.stringify(results));
 }
 
 /**
@@ -66,6 +65,6 @@ export async function POST(req, res) {
  */
 function isMatching(match, inputPath, resultPath, user, results){
     if (match.hasOwnProperty(inputPath) && match[inputPath].toLowerCase().includes(user[resultPath].toLowerCase()) ) {
-        results[resultPath] = true
+        results[resultPath] = true;
     }
 }
