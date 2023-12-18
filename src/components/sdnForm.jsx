@@ -85,13 +85,12 @@ export default function SdnForm() {
     return (
         <main>
             <div className="flex items-center justify-center h-screen">
-                <Box className="w-full max-w-md p-8 bg-white rounded" style={{ border: '2px solid #fca930', borderBottomWidth: '12px', borderRightWidth: '10px', borderRadius: '15px' }}>
-                    <Typography variant="body1" className="mb-4"></Typography>
-                    <Image src="./trust.svg" alt="Organization logo" width="0" height="0" sizes="100vw" className="w-1/4 h-auto"/>
-                    <Typography variant="h4" className="mb-3 font-extrabold">
+                <Box className="w-full max-w-md p-8 bg-white rounded space-y-3" style={{ border: '2px solid #fca930', borderBottomWidth: '12px', borderRightWidth: '10px', borderRadius: '15px' }}>
+                    <Image src="./trust.svg" alt="Organization logo" width="100" height="100" sizes="100vw" className="w-1/4 h-auto"/>
+                    <Typography variant="h4" className="font-extrabold">
                         SDN Check
                     </Typography>
-                    <Typography variant="body1" className="mb-3">
+                    <Typography variant="body1">
                         We're committed to your security. This form checks your information against the our records to ensure compliance.
                     </Typography>
                     <TextField
@@ -101,7 +100,6 @@ export default function SdnForm() {
                         variant="outlined"
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
-                        className="mb-3 mr-3"
                     />
                     <TextField
                         required
@@ -111,9 +109,8 @@ export default function SdnForm() {
                         value={birthYear}
                         maxLength="4"
                         onChange={(e) => setBirthYear(e.target.value)}
-                        className="mb-3"
                     />
-                    <FormControl fullWidth className="mb-3">
+                    <FormControl fullWidth >
                         <InputLabel
                         id="country-select-label"
                         required
