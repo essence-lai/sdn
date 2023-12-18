@@ -63,7 +63,7 @@ export async function POST(req, res) {
  * @param {Object} user [Input user information]
  * @param {Object} results [Output results]
  */
-function isMatching(match, inputPath, resultPath, user, results){
+export function isMatching(match, inputPath, resultPath, user, results){
     if (match.hasOwnProperty(inputPath) && match[inputPath].toLowerCase().includes(user[resultPath].toLowerCase()) ) {
         results[resultPath] = true;
     }

@@ -90,9 +90,7 @@ export default function SdnForm() {
                     <Typography variant="h4" className="font-extrabold">
                         SDN Check
                     </Typography>
-                    <Typography variant="body1">
-                        We're committed to your security. This form checks your information against the our records to ensure compliance.
-                    </Typography>
+                    <Typography variant="body1"> We are re committed to your security. This form checks your information against the our records to ensure compliance.</Typography>
                     <TextField
                         required
                         id="full-name"

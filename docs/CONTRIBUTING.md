@@ -9,13 +9,9 @@ This project is build and deploy with CircleCi and NetlifyCD
 First, run the development server:
 
 ```bash
-npm run dev
-# or
+yarn install
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -23,7 +19,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file
 
 ## Tests
-#TODO
+
+```bash
+yarn test
+```
 
 # Branching Strategy
 

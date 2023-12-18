@@ -18,15 +18,14 @@ Questions? [`@essence-lai`](https://github.com/essence-lai)
 - [Quick Links](#quick-links)
 - [Overview](#overview)
 - [Useful Resources](#useful-resources)
+- [Future Upgrades](#future-upgrades)
 
 # Quick links
 | Resource | Dev-pr | Prod |
 | :---: | :---: | :---: |
-| Interface | :---:| [SDN Lookup]()|
-| CircleCi | [All branches]()| [Main]()|
-| Netlify Redis cache | :---:| [Redis]()|
-| NewRelic Monitoring | :---: | [NewRelic]()|
-| Splunk Logs | :---: | [Splunk]()|
+| Interface | :---:| [SDN Lookup](https://sdn-elai.netlify.app/)|
+| CircleCi | [All branches](https://app.circleci.com/pipelines/circleci/9coiYMfcHu1ERt5ztmp4sB/9yfCKidfgjt4isH3ALyDU3)| [Main](https://app.circleci.com/pipelines/circleci/9coiYMfcHu1ERt5ztmp4sB/9yfCKidfgjt4isH3ALyDU3?branch=main)|
+| Netlify cache | :---:| [Netlify](https://app.netlify.com/sites/sdn-elai/overview)|
 | Runbook | :---: | [**RUNBOOK**.md](docs/RUNBOOK.md)|
 | Contributing | :---: | [**CONTRIBUTING**.md](docs/CONTRIBUTING.md)|
 
@@ -48,3 +47,8 @@ Upon submission, the backend response should be displayed as follows:
 * [Next.js](https://nextjs.org/learn-pages-router/basics/create-nextjs-app)
 * [Netlify + Redis](https://www.netlify.com/integrations/redis/)
 * [Circlci](https://circleci.com/docs/getting-started/)
+
+# Future upgrades
+* Full Coverage Unit Tests for both front end and back end
+* Upgrade api call times with a Redis cache to store previous responses
+* Add Logging with Splunk and Monitoring with Newrelic
